@@ -3,17 +3,17 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo "Building branch: ${env.BRANCH_NAME}"
+                echo "Building new branch: ${env.BRANCH_NAME}"
             }
         }
         stage('Test') {
             steps {
-                echo "Running tests for branch: ${env.BRANCH_NAME}"
+                echo "Running tests for new branch: ${env.BRANCH_NAME}"
             }
         }
         stage('Deploy') {
             steps {
-                echo "Deploying branch: ${env.BRANCH_NAME}"
+                echo "Deploying new branch: ${env.BRANCH_NAME}"
             }
         }
     }
