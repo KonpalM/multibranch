@@ -7,9 +7,9 @@ pipeline {
             steps {
                 script {
                     dockerBuildAndPush(
-                        image: "myteam/myapp",
+                        image: "kmaharwal1/jenkins-shared-library-testapp",
                         tag: "1.0.0",
-                        registry: "my-docker-registry.com"
+                        registry: "docker.io"
                     )
                 }
             }
