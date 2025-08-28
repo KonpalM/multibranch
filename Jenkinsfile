@@ -1,19 +1,13 @@
+@Library('my-shared-lib') _
+
 pipeline {
     agent any
     stages {
-        stage('Build') {
+        stage('Test Shared Library') {
             steps {
-                echo "Building new branch: ${env.BRANCH_NAME}"
-            }
-        }
-        stage('Test') {
-            steps {
-                echo "Running tests for new branch: ${env.BRANCH_NAME}"
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo "Deploying new branch: ${env.BRANCH_NAME}"
+                script {
+                    helloWorld('from feature1')
+                }
             }
         }
     }
