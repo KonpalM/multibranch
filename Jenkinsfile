@@ -3,10 +3,14 @@
 pipeline {
     agent any
     stages {
-        stage('Test Shared Library') {
+        stage('Build & Push Docker Image') {
             steps {
                 script {
-                    helloWorld('from main')
+                    dockerBuildAndPush(
+                        image: "myteam/myapp",
+                        tag: "1.0.0",
+                        registry: "my-docker-registry.com"
+                    )
                 }
             }
         }
